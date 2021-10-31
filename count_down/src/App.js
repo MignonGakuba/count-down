@@ -1,14 +1,11 @@
 import { useState } from 'react';
 import { add } from 'date-fns';
 
-import { Ticker } from './components/Ticker';
+import { Ticker } from './components/Ticker/Ticker.js';
 
 import style from './App.module.scss';
 
 // Defaults to 6 days, 22 hours, 40 minutes and 0 seconds from now in your timezone.
-
-//const eldenRingDate = new Date("2021, 02, 25");
-
 const futureDate = add(new Date(), {
   days: 6,
   hours: 22,
@@ -17,14 +14,14 @@ const futureDate = add(new Date(), {
 
 function App() {
 
-  console.log(futureDate);
+  
   const [tickerVisible, setTickerVisible] = useState(false);
   const tickerEl = tickerVisible ? <Ticker futureDate={futureDate} /> : null;
   const toggleText = tickerVisible ? 'Hide Countdown': 'Show Countdown';
 
   return (
     <div className={ style.pageContainer }>
-      <h1>Count Event Elden Ring!!</h1>
+      <h1>Join Our Event</h1>
       <p>Come check out our great event. It will be lots of fun.</p>
       { tickerEl }
       <button 
@@ -36,5 +33,6 @@ function App() {
     </div>  
   );
 }
+
 
 export default App;

@@ -36,7 +36,6 @@ export const Ticker = ({futureData}) => {
     // Hold way
     if(!isTimeUp){
        
-        console.log(futureData, now);
         // set the start with now and end set the previous data
        const duration = intervalToDuration({
            start:now,
