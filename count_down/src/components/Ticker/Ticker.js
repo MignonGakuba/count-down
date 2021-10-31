@@ -1,15 +1,15 @@
 import { useState,useEffect } from 'react';
-import {intervalToDuration, IsBefore} from 'date-fns';
-import {TickerCell } from 'components/TickerCell';
+import {intervalToDuration, isBefore} from 'date-fns';
+import { TickerCell } from '../TickerCel/TickerCell';
 import style from './Ticker.module.scss';
 
-import {TickerSeparator} from 'comoponents/TickerSeparator'
+import {TickerSeparator} from '../TickerSeparator/TickerSeparator'
 
-export const Ticker = ({futureData}) =>{
+export const Ticker = ({futureData}) => {
 
     //set the useEffect , to use the now and setNow
     const [now,setNow] = useState(new Date());
-    const isTimeUp = IsBefore(futureData,now);
+    const isTimeUp = isBefore(futureData,now);
 
 
     //Set the variables
@@ -36,6 +36,7 @@ export const Ticker = ({futureData}) =>{
     // Hold way
     if(!isTimeUp){
        
+        console.log(futureData, now);
         // set the start with now and end set the previous data
        const duration = intervalToDuration({
            start:now,
