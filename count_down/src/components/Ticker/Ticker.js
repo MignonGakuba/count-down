@@ -11,6 +11,7 @@ export const Ticker = ({futureData}) => {
     const [now,setNow] = useState(new Date());
     const isTimeUp = isBefore(futureData,now);
 
+    console.log("Time:"+futureData);
 
     //Set the variables
     let days = 0;
@@ -35,7 +36,8 @@ export const Ticker = ({futureData}) => {
 
     // Hold way
     if(!isTimeUp){
-       
+        console.log("Time:"+futureData);
+
         // set the start with now and end set the previous data
        const duration = intervalToDuration({
            start:now,
@@ -75,9 +77,6 @@ export const Ticker = ({futureData}) => {
         </div>
     )
 
-
-
 }
-
 
 export default Ticker;
