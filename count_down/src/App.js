@@ -25,7 +25,7 @@ function App() {
   const toggleText = tickerVisible ? 'Hide Countdown': 'Show Countdown';
 
   return (
-    <div className = {style.backgroundImage}>
+    <div className = {style.background}>
         <div className={ style.pageContainer }>
           <h1>Join Our Event</h1>
           <p>Come check out our great event. It will be lots of fun.</p>
