@@ -1,17 +1,17 @@
-import { useState,useEffect } from 'react';
+import { useEffect, useState } from "react";
 import {intervalToDuration, isBefore} from 'date-fns';
-import { TickerCell } from '../TickerCel/TickerCell';
+import { TickerCell } from '../TickerCel/TickerCell.js';
 import style from './Ticker.module.scss';
 
 import {TickerSeparator} from '../TickerSeparator/TickerSeparator'
 
-export const Ticker = ({futureData}) => {
+export const Ticker = ({futureDate}) => {
 
     //set the useEffect , to use the now and setNow
     const [now,setNow] = useState(new Date());
-    const isTimeUp = isBefore(futureData,now);
+    const isTimeUp = isBefore(futureDate,now);
 
-    console.log("Time:"+futureData);
+    console.log("Time:"+futureDate);
 
     //Set the variables
     let days = 0;
@@ -36,12 +36,12 @@ export const Ticker = ({futureData}) => {
 
     // Hold way
     if(!isTimeUp){
-        console.log("Time:"+futureData);
+        console.log("Time:"+futureDate);
 
         // set the start with now and end set the previous data
        const duration = intervalToDuration({
            start:now,
-           end:futureData
+           end:futureDate
        });
 
 
@@ -51,20 +51,21 @@ export const Ticker = ({futureData}) => {
        seconds = duration.seconds;
 
     }
-
     const tickerContents = isTimeUp ? (
         <div className={style.timeIsUp}>Time is up!!</div>
         ) : (
                 <>
-                <TickerCell value= {days} label="Days" />
+                <TickerCell value = {days} label="Days" />
                 <TickerSeparator />
-                <TickerCell value= {hours} label="Hours" />
+                <TickerCell value = {hours} label="Hours" />
                 <TickerSeparator />
-                <TickerCell value= {minutes} label="Minutes" />
+                <TickerCell value = {minutes} label="Minutes" />
                 <TickerSeparator />
-                <TickerCell value= {seconds} label="Seconds" />
+                <TickerCell value = {seconds} label="Seconds" />
                 </>
     );
+        
+
 
     if(isTimeUp){
         return {days:0,hours:0, minutes:0,seconds, isTimeUp:true};
@@ -77,6 +78,6 @@ export const Ticker = ({futureData}) => {
         </div>
     )
 
-}
+};
 
 export default Ticker;

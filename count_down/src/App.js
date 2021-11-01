@@ -14,7 +14,6 @@ const futureDate = add(new Date(), {
 
 function App() {
 
-  console.log(futureDate);
   const [tickerVisible, setTickerVisible] = useState(false);
   const tickerEl = tickerVisible ? <Ticker futureDate={futureDate} /> : null;
   const toggleText = tickerVisible ? 'Hide Countdown': 'Show Countdown';
