@@ -14,6 +14,8 @@ export const Ticker = ({futureDate}) => {
     console.log("Time:"+futureDate);
 
     //Set the variables
+    let months = 0;
+    let weeks = 0;
     let days = 0;
     let hours = 0;
     let minutes = 0;
@@ -45,6 +47,8 @@ export const Ticker = ({futureDate}) => {
        });
 
 
+       months = duration.months;
+       weeks = duration.weeks;
        days = duration.days;
        hours = duration.hours;
        minutes = duration.minutes;
@@ -56,6 +60,10 @@ export const Ticker = ({futureDate}) => {
         <div className={style.timeIsUp}>Time is up!!</div>
         ) : (
                 <>
+                {/* <TickerCell value = {months} label="Month" />
+                <TickerSeparator />
+                <TickerCell value = {weeks} label= "Weeks" />
+                <TickerSeparator /> */}
                 <TickerCell value = {days} label="Days" />
                 <TickerSeparator />
                 <TickerCell value = {hours} label="Hours" />

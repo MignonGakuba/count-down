@@ -7,9 +7,11 @@ import style from './App.module.scss';
 
 // Defaults to 6 days, 22 hours, 40 minutes and 0 seconds from now in your timezone.
 const futureDate = add(new Date(), {
-  days: 6,
+  months:1,
+  weeks:1,
+  days:3,
   hours: 22,
-  minutes: 40
+  minutes: 30
 });
 
 function App() {
