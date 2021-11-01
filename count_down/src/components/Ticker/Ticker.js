@@ -46,12 +46,13 @@ export const Ticker = ({futureDate}) => {
 
 
        days = duration.days;
-       hours = duration.hour;
+       hours = duration.hours;
        minutes = duration.minutes;
        seconds = duration.seconds;
 
     }
-    const tickerContents = isTimeUp ? (
+
+     const tickerContents = isTimeUp ? (
         <div className={style.timeIsUp}>Time is up!!</div>
         ) : (
                 <>
