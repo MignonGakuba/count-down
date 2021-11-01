@@ -60,10 +60,10 @@ export const Ticker = ({futureDate}) => {
         <div className={style.timeIsUp}>Time is up!!</div>
         ) : (
                 <>
-                {/* <TickerCell value = {months} label="Month" />
+                <TickerCell value = {months} label="Month" />
                 <TickerSeparator />
                 <TickerCell value = {weeks} label= "Weeks" />
-                <TickerSeparator /> */}
+                <TickerSeparator />
                 <TickerCell value = {days} label="Days" />
                 <TickerSeparator />
                 <TickerCell value = {hours} label="Hours" />

@@ -2,19 +2,25 @@
 
 body, html {
   height: 100%;
+  background-color: black;
 }
 .background  {
   background-image: url('./image/eldenring.jpg'); 
+  position: fixed;
   width: 3840px;
   height: 2160px;
   background-position: 'center';
   background-size: 'cover';
-  background-repeat: 'no-repeat'
+  background-repeat: 'no-repeat';
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .pageContainer {
   display: flex;
-  margin: 1300px  auto ;
+  margin: 1300px auto;
   flex-direction: column;
   align-items: center;
   width: 100%;
