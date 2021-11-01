@@ -1,7 +1,11 @@
 @import 'colours';
 
+.backgroundImage {
+  background-image: url('./image/eldenring.jpg');
+  
+}
+
 .pageContainer {
-  background-image: './image/eldenring.jpg';
   display: flex;
   flex-direction: column;
   align-items: center;
