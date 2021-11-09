@@ -14,8 +14,8 @@ export const Ticker = ({futureDate}) => {
     console.log("Time:"+futureDate);
 
     //Set the variables
-    let months = 0;
-    let weeks = 0;
+    // let months = 0;
+    // let weeks = 0;
     let days = 0;
     let hours = 0;
     let minutes = 0;
@@ -39,32 +39,32 @@ export const Ticker = ({futureDate}) => {
     // Hold way
     if(!isTimeUp){
         console.log("Time:"+futureDate);
+       try
+        {
+         // set the start with now and end set the previous data
+        const duration = intervalToDuration({
+            start:now,
+            end:futureDate
+        });
 
-        // set the start with now and end set the previous data
-       const duration = intervalToDuration({
-           start:now,
-           end:futureDate
-       });
-
-
-       months = duration.months;
-       weeks = duration.weeks;
-       days = duration.days;
-       hours = duration.hours;
-       minutes = duration.minutes;
-       seconds = duration.seconds;
-       console.log("Weeks:"+duration.weeks);
-
+        days = duration.days;
+        hours = duration.hours;
+        minutes = duration.minutes;
+        seconds = duration.seconds;
+       }
+       catch(error){
+        console.log(error);
+       }
     }
 
      const tickerContents = isTimeUp ? (
         <div className={style.timeIsUp}>Time is up!!</div>
         ) : (
                 <>
-                <TickerCell value = { months } label="Month" />
+                {/* <TickerCell value = { months } label="Month" />
                 <TickerSeparator />
-                <TickerCell value = { weeks } label= "Weeks" />
-                <TickerSeparator />
+                <TickerCell value = { weeks } label= "Weeks" />  */}
+                {/* <TickerSeparator /> */}
                 <TickerCell value = {days} label="Days" />
                 <TickerSeparator />
                 <TickerCell value = {hours} label="Hours" />

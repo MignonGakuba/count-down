@@ -6,17 +6,13 @@ import style from './App.module.scss';
 
 
 
-
 // Defaults to 6 days, 22 hours, 40 minutes and 0 seconds from now in your timezone.
 // Set the 25 februari Elden Ring
-const futureDate = add(new Date(), {
-  months:3,
-  weeks:12,
-  days:3,
+const futureDate = add(new Date (), {
+  days:12,
   hours: 22,
   minutes: 30
 });
-
 
 function App() {
 
