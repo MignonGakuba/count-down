@@ -3,9 +3,6 @@ import { add } from 'date-fns';
 import { Ticker } from './components/Ticker/Ticker.js';
 import style from './App.module.scss';
 
-
-
-
 // Defaults to 6 days, 22 hours, 40 minutes and 0 seconds from now in your timezone.
 // Set the 25 februari Elden Ring
 const futureDate = add(new Date(2022, 2, 25), {
